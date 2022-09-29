@@ -1,25 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import TodoListContol from "./components/Control/TodoListContol";
+import Divider from "./components/Divider/Divider";
+import TodoHeader from "./components/Header/TodoHeader";
+import TodoInput from "./components/Input/TodoInput";
+import TodoList from "./components/List/TodoList";
+
+export type TodoType = {
+  id: number;
+  text: string;
+  isChecked: boolean;
+};
 
 function App() {
+  const [text, setText] = useState("");
+  const [todos, setTodos] = useState<TodoType[]>([]);
+
+  const handleTextChange = (text: string) => {
+    setText(text);
+  };
+
+  const handleTextSubmit = () => {
+    console.log("submit!!!!!!!!!!!!!!!!!!!!!!!");
+    setText("");
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main className="App">
+      <TodoHeader />
+      <TodoInput text={text} onTextChange={handleTextChange} onSubmit={handleTextSubmit} />
+      <TodoListContol />
+      <Divider />
+      <TodoList todos={todos} />
+    </main>
   );
 }
 

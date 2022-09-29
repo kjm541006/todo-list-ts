@@ -1,0 +1,26 @@
+.control {
+  display: flex;
+  justify-content: space-between;
+  /* background: red; */
+  margin-top: 12px;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: #181818;
+  background-color: inherit;
+  border: none;
+  padding: 0;
+  margin-top: 12px;
+}
+
+.checkAllIcon,
+.deleteAllIcon {
+  font-size: 18px;
+}
+
+.icon {
+  margin-right: 8px;
+}
