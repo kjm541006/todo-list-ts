@@ -22,6 +22,13 @@ function App() {
   };
 
   const handleTextSubmit = () => {
+    const newTodos = todos.concat({
+      id: Date.now(),
+      text: text,
+      isChecked: false,
+    });
+
+    setTodos(newTodos);
     console.log("submit!!!!!!!!!!!!!!!!!!!!!!!");
     setText("");
   };
