@@ -35,7 +35,7 @@ function App() {
 
   return (
     <main className="App">
-      <TodoHeader todoLen={todos.length} />
+      <TodoHeader todoLen={todos.filter((todo) => !todo.isChecked).length} />
       <TodoInput text={text} onTextChange={handleTextChange} onSubmit={handleTextSubmit} />
       <TodoListArea todoLen={todos.length}>
         <TodoListContol />
