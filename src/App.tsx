@@ -27,7 +27,7 @@ function App() {
 
   return (
     <main className="App">
-      <TodoHeader />
+      <TodoHeader todoLen={todos.length} />
       <TodoInput text={text} onTextChange={handleTextChange} onSubmit={handleTextSubmit} />
       <TodoListContol />
       <Divider />
