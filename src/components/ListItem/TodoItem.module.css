@@ -26,7 +26,7 @@
 }
 
 .unChecked {
-  color: #ccc;
+  color: #181818;
 }
 
 .checked:hover {
@@ -43,4 +43,9 @@
   margin-left: auto;
   color: red;
   visibility: hidden;
+}
+
+.strikethrough {
+  text-decoration: line-through;
+  color: #ccc;
 }

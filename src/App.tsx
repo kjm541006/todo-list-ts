@@ -33,14 +33,50 @@ function App() {
     setText("");
   };
 
+  const handleCheckClick = (id: number) => {
+    const newTodos = todos.map((item) => {
+      if (item.id === id) {
+        return {
+          ...item,
+          isChecked: !item.isChecked,
+        };
+      }
+      return item;
+    });
+    setTodos(newTodos);
+  };
+
+  const handleRemoveClick = (id: number) => {
+    const newTodos = todos.filter((item) => {
+      return item.id !== id;
+    });
+
+    setTodos(newTodos);
+  };
+
+  const handleCheckAll = () => {
+    const newTodos = todos.map((item) => {
+      return {
+        ...item,
+        isChecked: !item.isChecked,
+      };
+    });
+    setTodos(newTodos);
+  };
+
+  const handleRemoveAll = () => {
+    setTodos([]);
+    console.log("removeAll");
+  };
+
   return (
     <main className="App">
       <TodoHeader todoLen={todos.filter((todo) => !todo.isChecked).length} />
       <TodoInput text={text} onTextChange={handleTextChange} onSubmit={handleTextSubmit} />
       <TodoListArea todoLen={todos.length}>
-        <TodoListContol />
+        <TodoListContol onCheckAll={handleCheckAll} onRemoveAll={handleRemoveAll} />
         <Divider />
-        <TodoList todos={todos} />
+        <TodoList todos={todos} onCheckClick={handleCheckClick} onRemoveClick={handleRemoveClick} />
       </TodoListArea>
     </main>
   );
