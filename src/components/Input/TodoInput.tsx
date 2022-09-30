@@ -27,6 +27,7 @@ const TodoInput = (props: TodoInputProps) => {
           placeholder={"할 일 입력"}
           value={props.text}
           onChange={handleInputChange}
+          autoFocus
         />
         <button type="submit" className={classes.add}>
           <IoMdAdd />

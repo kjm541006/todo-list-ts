@@ -17,8 +17,21 @@
 }
 
 .checkAllIcon,
-.deleteAllIcon {
+.deleteAllIcon,
+.unCheckAllIcon {
   font-size: 18px;
+}
+
+.checkAllIcon:hover {
+  color: #32cd32;
+}
+
+.unCheckAllIcon:hover {
+  color: #ccc;
+}
+
+.deleteAllIcon:hover {
+  color: red;
 }
 
 .icon {
